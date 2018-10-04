@@ -1,0 +1,28 @@
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight%-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT_ING" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight%-5level %logger{36} - %blue%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.apache.ignite" level="WARN"  additivity="false"/>
+    <logger name="org.apache.ignite.internal.manager.discovery" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.apache.tomcat.util.net" level="OFF"/>
+
+    <logger name="com.ing.learn" level="debug" additivity="false">
+        <appender-ref ref="STDOUT_ING"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
