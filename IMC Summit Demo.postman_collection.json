@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "a42a3607-43e5-4edf-bb2c-f9f4372868ce",
+		"name": "IMC Summit Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get cust accounts (b)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8889/customer/0/accounts",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"customer",
+						"0",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cust accounts (a)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8888/customer/0/accounts/",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"customer",
+						"0",
+						"accounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Tx on account (a)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8888/account/account_1/transactions/",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"account",
+						"account_1",
+						"transactions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Tx on account (b)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8889/account/account_1/transactions/",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"account",
+						"account_1",
+						"transactions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update limit (b)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ownerId\":\"0\",\n\t\"contactDetails\":\"Owner@user.com\",\n\t\"limitAmount\": 50\n}"
+				},
+				"url": {
+					"raw": "localhost:8889/account/account_1/limit",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"account",
+						"account_1",
+						"limit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Debit Tx (a)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ownerId\":\"0\",\n\t\"accountId\":\"account_1\",\n\t\"debitAccountNumber\":\"BE12 3456 6789 0000\",\n\t\"creditAccountNumber\":\"BE99 0997 8080 4456\",\n\t\"currency\":\"EUR\",\n\t\"amount\":20,\n\t\"communication\":\"Test Debit 2\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8888/transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Debit Tx (b)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ownerId\":\"0\",\n\t\"accountId\":\"account_1\",\n\t\"debitAccountNumber\":\"BE12 3456 6789 0000\",\n\t\"creditAccountNumber\":\"BE99 0997 8080 4456\",\n\t\"currency\":\"EUR\",\n\t\"amount\":3360,\n\t\"communication\":\"Test Debit with limit\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8889/transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Credit Tx",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ownerId\":\"0\",\n\t\"accountId\":\"account_1\",\n\t\"debitAccountNumber\":\"BE99 0997 8770 4456\",\n\t\"creditAccountNumber\":\"BE12 3456 6789 0000\",\n\t\"currency\":\"EUR\",\n\t\"amount\":1234,\n\t\"communication\":\"Test Credit\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8888/transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

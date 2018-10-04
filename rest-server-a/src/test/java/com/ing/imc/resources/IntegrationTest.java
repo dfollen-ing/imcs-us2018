@@ -4,6 +4,7 @@ import com.ing.imc.Config;
 import com.ing.imc.domain.AccountType;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,7 @@ public class IntegrationTest {
     }
 
     @Test
+    @Ignore("Only run when the Ignite grid is up and running with basic data")
     public void testWithdrawalAndDeposit() {
 
         // let's get the current account of 333
