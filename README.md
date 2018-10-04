@@ -6,10 +6,10 @@ It is not a final product, it is mainly used as proof of concept.
 ## Setup
 First build your project using mvn:  
 ``` mvn clean install ```  
-At any time, if you want to reset the data if the server nodes, shut them down and run a maven build
+At any time, if you want to reset the data of the server nodes, shut them down and run a maven build
 
 ## Ignite server grid
-Then, you will need to start an Ignite server grid. To do so, you can use the utility in [ignite-grid](ignite-grid).  
+You will first need to start an Ignite server grid. To do so, you can use the utility in [ignite-grid](ignite-grid).  
 There are 3 runnable that will start 3 server nodes, just run the main method in:  
 - [PServerNode1Starter](ignite-grid/src/main/java/com/ing/imc/grid/PServerNode1Starter.java)
 - [PServerNode2Starter](ignite-grid/src/main/java/com/ing/imc/grid/PServerNode2Starter.java)
@@ -25,7 +25,7 @@ into the [upgrade-client](upgrade-client). Run the java classes in the following
 
 ## Initial application
 You can now start the application server (a). Just start the springboot [RestNodeA](rest-server-a/src/main/java/com/ing/imc/RestNodeA.java). 
-You can then send rest requests. There is an example set of request in a Postman project in [IMC Summit Demo](IMC%20Summit%20Demo.postman_collection.json).
+You can then send REST requests. There is an example set of request in a Postman project in [IMC Summit Demo](IMC%20Summit%20Demo.postman_collection.json).
 
 ## Evolution
 Now that the RestNodeA is running, we can simulate a new application coming in. First, we will need to create the new alert cache.
